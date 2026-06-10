@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ANYWHERE EVERYWHERE</title>
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html, body {
+  background: #000;
+  color: #fff;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  overflow-x: hidden;
+}
+::selection {
+  background: #39ff14;
+  color: #000;
+}
+
+/* HERO - Rotating logo, centered, full black */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background: #000;
+  overflow: hidden;
+}
+.hero video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+/* VIDEO GRID - all playing simultaneously, flush, no gaps */
+.video-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 50vh 50vh;
+  gap: 0;
+}
+.video-grid video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* FULL BLEED VIDEO */
+.video-full {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+.video-full video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* PHOTO GRID - flush, simultaneous, blocked */
+.photo-grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+}
+.photo-grid-2 img {
+  width: 100%;
+  height: 80vh;
+  object-fit: cover;
+  display: block;
+}
+
+.photo-grid-3 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 0;
+}
+.photo-grid-3 img {
+  width: 100%;
+  height: 60vh;
+  object-fit: cover;
+  display: block;
+}
+
+/* FULL WIDTH PHOTO */
+.photo-full {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+.photo-full img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* NAV - ghost, fixed */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  padding: 20px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  mix-blend-mode: difference;
+}
+nav .wordmark {
+  font-size: 10px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.22);
+}
+nav .globe {
+  width: 22px;
+  opacity: 0.22;
+}
+
+/* INFO - minimal, low on page */
+.info {
+  padding: 80px 30px;
+  max-width: 550px;
+}
+.info .label {
+  font-size: 8px;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: rgba(57,255,20,0.5);
+  margin-bottom: 16px;
+}
+.info p {
+  font-size: 12px;
+  line-height: 2.1;
+  color: rgba(255,255,255,0.3);
+}
+.info .blue {
+  color: rgba(100,200,255,0.45);
+}
+
+/* PARTNERS */
+.partners {
+  padding: 40px 30px;
+}
+.partners .label {
+  font-size: 8px;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: rgba(100,200,255,0.35);
+  margin-bottom: 12px;
+}
+.partners span {
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  color: rgba(255,255,255,0.15);
+  text-transform: uppercase;
+  margin-right: 40px;
+}
+
+/* FOOTER */
+footer {
+  padding: 20px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 7px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.08);
+}
+footer img {
+  width: 16px;
+  opacity: 0.15;
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <img class="globe" src="globe-logo.png" alt="">
+  <span class="wordmark">Anywhere Everywhere</span>
+</nav>
+
+<!-- HERO: Trimmed rotating A logo loop -->
+<section class="hero">
+  <video autoplay muted loop playsinline>
+    <source src="ae-hero.mp4" type="video/mp4">
+  </video>
+</section>
+
+<!-- VIDEO GRID: 2x2 simultaneous — event clips + full logo spin -->
+<section class="video-grid">
+  <video autoplay muted loop playsinline>
+    <source src="ae-clip-1.mp4" type="video/mp4">
+  </video>
+  <video autoplay muted loop playsinline>
+    <source src="ae-clip-2.mp4" type="video/mp4">
+  </video>
+  <video autoplay muted loop playsinline>
+    <source src="ae-clip-3.mp4" type="video/mp4">
+  </video>
+  <video autoplay muted loop playsinline>
+    <source src="ae-logo-spin.mp4" type="video/mp4">
+  </video>
+</section>
+
+<!-- PHOTO GRID: 2 columns flush -->
+<section class="photo-grid-2">
+  <img src="IMG_2659.jpg" alt="">
+  <img src="IMG_2650.jpg" alt="">
+</section>
+
+<!-- FULL BLEED VIDEO -->
+<section class="video-full">
+  <video autoplay muted loop playsinline>
+    <source src="ae-clip-2.mp4" type="video/mp4">
+  </video>
+</section>
+
+<!-- PHOTO GRID: 3 columns flush -->
+<section class="photo-grid-3">
+  <img src="IMG_2656.jpg" alt="">
+  <img src="IMG_2654.jpg" alt="">
+  <img src="IMG_2651.jpg" alt="">
+</section>
+
+<!-- FULL WIDTH PHOTO -->
+<section class="photo-full">
+  <img src="IMG_2658.jpg" alt="">
+</section>
+
+<!-- PHOTO GRID: 2 columns -->
+<section class="photo-grid-2">
+  <img src="IMG_2653.jpg" alt="">
+  <img src="IMG_2657.jpg" alt="">
+</section>
+
+<!-- FULL BLEED VIDEO -->
+<section class="video-full">
+  <video autoplay muted loop playsinline>
+    <source src="ae-clip-3.mp4" type="video/mp4">
+  </video>
+</section>
+
+<!-- PHOTO GRID: 3 columns -->
+<section class="photo-grid-3">
+  <img src="IMG_2646.jpg" alt="">
+  <img src="IMG_2649.jpg" alt="">
+  <img src="IMG_2655.jpg" alt="">
+</section>
+
+<!-- PHOTO GRID: 2 columns -->
+<section class="photo-grid-2">
+  <img src="IMG_2647.jpg" alt="">
+  <img src="IMG_2656.jpg" alt="">
+</section>
+
+<!-- INFO -->
+<section class="info">
+  <div class="label">Indianapolis</div>
+  <p>
+    Curated nightlife. R&B. Afrobeats. Hip Hop. Every edition is a statement. <span class="blue">It started somewhere. Now it goes everywhere.</span>
+  </p>
+</section>
+
+<!-- PARTNERS -->
+<section class="partners">
+  <div class="label">Partners</div>
+  <span>Jack Daniel's</span>
+  <span>Red Bull</span>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <img src="globe-logo.png" alt="">
+  <span>Anywhere Everywhere</span>
+  <span>2025</span>
+</footer>
+
+</body>
+</html>
